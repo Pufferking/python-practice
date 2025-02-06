@@ -7,6 +7,12 @@ class Scoreboard(Turtle):
     def __init__(self):
         super().__init__()
         self.score = 0
+
+        #High Score taken from a txt file called data.txt
+        with open("data.txt") as random:
+            self.high_score = int(random.read())
+
+
         self.penup()
         self.hideturtle()
         self.goto(0, 260)
@@ -15,17 +21,22 @@ class Scoreboard(Turtle):
 
     #updates the score everytime the snake eats food
     def update_scoreboard(self):
-        self.write(f"Score = {self.score}", align=ALIGNMENT, font=FONT)
+        self.clear()
+        self.write(f"Score: {self.score} High score: {self.high_score}", align=ALIGNMENT, font=FONT)
 
-    #initiates game over screen everytime the snake collide
-    def game_over(self):
-        self.goto(0, 0)
-        self.write(f"Game Over", align=ALIGNMENT, font=FONT)
+    #resets the score, changes the current high score and save it to the data.txt for furthur use
+    def reset(self):
+        if self.score > self.high_score:
+            self.high_score = self.score
+            with open("data.txt", mode = "w") as bla:
+                bla.write(f"{self.high_score}")
+
+        self.score = 0
+        self.update_scoreboard()
 
     #increment score variable by 1
     def increase_score(self):
         self.score += 1
-        self.clear()
         self.update_scoreboard()
 
 
