@@ -5,14 +5,15 @@ from twilio.rest import Client
 # -------------------------------------
 # 1. Twilio credentials (for sending SMS)
 # -------------------------------------
+
 account_id = os.getenv("TWILIO_ACCOUNT_ID")
-auth_token = os.getenv("TWILIO_AUTH_TOKEN")g
-api_key = os.getenv("OWM_API_KEY")
+auth_token = os.getenv("TWILIO_AUTH_TOKEN")
 
 # -------------------------------------
 # 2. OpenWeatherMap API credentials and endpoint
 # -------------------------------------
-api_key = "35e3ee334cdcd41b880da3d6cd0f42e0"
+
+api_key = os.getenv("OWM_API_KEY")
 OWM_endpoint = "https://api.openweathermap.org/data/2.5/forecast"
 
 # -------------------------------------
