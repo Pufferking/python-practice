@@ -1,11 +1,13 @@
 import requests
+import os
 from twilio.rest import Client
 
 # -------------------------------------
 # 1. Twilio credentials (for sending SMS)
 # -------------------------------------
-account_id = "AC8d19790864c13b5104a231bb0e70a2f4"
-auth_token = "00a2b74c1efc2298358287eba56cd4a4"
+account_id = os.getenv("TWILIO_ACCOUNT_ID")
+auth_token = os.getenv("TWILIO_AUTH_TOKEN")g
+api_key = os.getenv("OWM_API_KEY")
 
 # -------------------------------------
 # 2. OpenWeatherMap API credentials and endpoint
