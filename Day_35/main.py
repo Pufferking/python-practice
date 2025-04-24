@@ -1,18 +1,22 @@
 import requests
 import os
 from twilio.rest import Client
+from dotenv import load_dotenv
+
+# -------------------------------------
+# Load environment variables from .env
+# -------------------------------------
+load_dotenv()
 
 # -------------------------------------
 # 1. Twilio credentials (for sending SMS)
 # -------------------------------------
-
 account_id = os.getenv("TWILIO_ACCOUNT_ID")
 auth_token = os.getenv("TWILIO_AUTH_TOKEN")
 
 # -------------------------------------
 # 2. OpenWeatherMap API credentials and endpoint
 # -------------------------------------
-
 api_key = os.getenv("OWM_API_KEY")
 OWM_endpoint = "https://api.openweathermap.org/data/2.5/forecast"
 
