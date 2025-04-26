@@ -1,5 +1,6 @@
 import requests
 from twilio.rest import Client
+#codes are from trial accounts no actual valuable codes are listed
 stock_api_key = "L9X793O6HTBDS9Z4"
 news_api_key = "92074fd66c6c4b308cbd1f5169cf55a8"
 twilio_sid = "AC8d19790864c13b5104a231bb0e70a2f4"
@@ -51,7 +52,7 @@ if dif_percent > 5:
         message = client.messages.create(
             body=article,
             from_="+16672740765",
-            to="+918714323222"
+            to="recipient number"
         )
 
 
